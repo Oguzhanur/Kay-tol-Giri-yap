@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Formu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+     *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary:#157AFE;
+    --secondary:#808080;
+    --bg-light:#fff;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    background-image: linear-gradient(blue, red);
+}
+
+.test{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.test form{
+    background: var(--bg-light);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: min(100%, 470px);
+    padding: 70px;
+    display: grid;
+    gap: 1rem;
+    border-radius: 10px;
+}
+
+.title h1{
+    font-size: 2rem;
+}
+
+
+
+@keyframes pulse{
+    0%{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+
+
+.title p{
+    color: var(--secondary);
+    font-size: .9rem;
+}
+
+input, button{
+    font: inherit;
+    border: 2px solid transparent;
+    outline: 2px solid transparent;
+    border-radius: 5px;
+}
+
+
+span{
+    color: var(--secondary);
+    display: flex;
+}
+
+span::before, span::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--secondary);
+    margin: auto;
+}
+
+span::before{
+    margin-right: 1rem;
+}
+
+span::after{
+    margin-left: 1rem;
+}
+
+.input-field{
+    position: relative;
+}
+
+.input-field input{
+    background: #eeeeee;
+    padding: 23px 15px 7px;
+    width: 100%;
+    transition: .3s ease;
+}
+
+.input-field label{
+    position: absolute;
+    color: var(--secondary);
+    left: 15px;
+    top: 16px;
+    transition: .3s ease;
+}
+
+.input-field input:focus ~ label, .input-field input:not(:placeholder-shown) ~ label{
+    font-size: .85rem;
+    top: 5px;
+}
+
+.input-field input:focus{
+    border: 2px solid var(--primary);
+}
+
+.input-field input:focus ~ label{
+    color: var(--primary);
+}
+
+#unut{
+    text-decoration: none;
+    color: var(--primary);
+    font-size: .9rem;
+    text-align: end;
+}
+
+#giri{
+    background: var(--primary);
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+}
+
+#giri2{
+    font-size: .9rem;
+    text-align: center;
+    color: var(--secondary);
+}
+
+#signup a{
+    text-decoration: none;
+    color: var(--primary);
+}
+
+@media screen and (max-width:480px) {
+    .test form{
+        background: transparent;
+        box-shadow: none;
+        padding: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="test">
+        <form action="#">
+            <div class="title">
+                <h1>GİRİŞ YAP</h1>
+                <p>Tekrardan hoşgeldin.</p>
+            </div>
+
+            <div class="input-field">
+                <input type="text" id="ad" placeholder=" ">
+                <label for="ad">Kullanıcı adı</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="Şifre" placeholder=" ">
+                <label for="Şifre">Şifre</label>
+            </div>
+            <a href="#" id="unut">Şifremi unuttum </a>
+            <button id="giri">Giriş yap</button>
+            <p id="giri2">
+                Hesabın yok mu?
+                <a href="Kayıt.html">Kayıt ol</a>
+            </p>
+        </form>
+    </section>
+</body>
+</html>
